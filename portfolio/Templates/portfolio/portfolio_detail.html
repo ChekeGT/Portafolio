@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+{% block title %}Portafolio{% endblock %}
+{% load static %}
+{% block background %}{% static 'core/img/portfolio-bg.jpg' %}{% endblock %}
+{% block headers %}
+<h1>Portafolio</h1>
+<span class="subheading">{{ obj.title }}</span>
+{% endblock %}
+{% block content %}
+    <!-- Contenido Principal -->
+	    <div class="container">
+	      <!-- Proyecto -->
+	      <div class="row project">
+	      	<div class="col-lg-3 col-md-4 offset-lg-1">
+			      <img class="img-fluid" src="{{ object.image.url }}" alt="">
+	      	</div>
+	        <div class="col-lg-7 col-md-8">
+	          <p> {{ object.content|safe }}</p>
+                {% if project.url %}
+	          <p><a href="{{ project.url }}">Más Informacion</a></p>
+                {% endif %}
+	      	</div>
+	      </div>
+		  </div>
+{% endblock %}
