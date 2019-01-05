@@ -18,8 +18,10 @@
 	        <div class="col-lg-7 col-md-8">
 	      		<h2 class="section-heading title">{{ project.title }}</h2>
 	          <p> {{ project.content|striptags|safe|truncatechars:"200" }}</p>
-            <p><a href="{% url 'portfolio_detail' project.pk project.title|slugify %}" class="-link">Leer mas</a></p>
                 {% if project.url %}
+                    <p>
+                        <a href="{% url 'portfolio_detail' project.pk project.title|slugify %}" class="-link">Leer mas</a>
+                    </p>
                 {% endif %}
 	      	</div>
 	      </div>
