@@ -7,6 +7,7 @@ from ckeditor.fields import RichTextField
 class Post(models.Model):
     title = models.CharField(max_length=100, verbose_name='Titulo')
     relevant_image = models.ImageField(upload_to='Blog', verbose_name='Imagen de portada')
+    introduction_text = models.TextField(verbose_name='Texto de introduccion',)
     content = RichTextField(verbose_name='Contenido')
     created = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de creacion')
     reading_time = models.IntegerField(verbose_name='Tiempo de lectura(minutos)')

@@ -12,6 +12,7 @@ __pycache__/
 #Django Stuff
 Projects/
 Blog/
+*/migrations/
 #End of Django Stuff
 Personal/settings.py
 Personal/wsgi.py
