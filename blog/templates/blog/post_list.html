@@ -5,7 +5,7 @@
 {% block headers %}
     <h1>Mi blog, Donde te cuento mi vida</h1>
     <span class="subheading">
-        ¿Neta quieres conocerme? Lee un poco de esto.
+        Si quieres conocerme, lee un poco de esto.
     </span>
 {% endblock %}
 {% block content %}
@@ -70,7 +70,7 @@
                     </div>
                     <div class="post-titleContainer">
                         <h4 class="title post-title">
-                            <a href="#" style="font-size: 55px;">{{ post.title }}</a>
+                            <a href="{% url 'blog_detail' post.pk %}" style="font-size: 55px;">{{ post.title }}</a>
                         </h4>
                     </div>
                 <div class="post-entry">
@@ -88,7 +88,7 @@
                 </div>
                 <div class="entry-content">
                     <p class="text-lg-center">{{ post.introduction_text }}</p>
-                    <a href="#">Seguir Leyendo</a>
+                    <a href="{% url 'blog_detail' post.pk %}">Seguir Leyendo</a>
                 </div>
             </div>
     </article>

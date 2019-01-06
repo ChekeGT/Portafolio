@@ -1,0 +1,105 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}{{ post.title }}{% endblock %}
+{% block background %}{{ post.relevant_image.url }}{% endblock %}
+{% block content %}
+    <style>
+        .post-link{
+            display: inline-block;
+            padding: 3px 8px;
+            font-size: 25px;
+            font-weight: 600;
+            margin-right: 2px;
+            margin-bottom: 2px;
+            background: #08f;
+            color: #ffffff !important;
+            line-height: normal;
+            box-sizing: inherit;
+            margin-top: 30px;
+            text-transform: uppercase;
+        }
+        .post-title{
+            font-size: 25px;
+        }
+        .post-reading_time{
+            color: #cccccc;
+            font-size: 15px;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.24s ease-in-out;
+        }
+        .post{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .post-header{
+            margin-bottom: 25px;
+        }
+        .entry-content{
+            word-wrap: break-word;
+            text-align: left;
+            box-sizing: inherit;
+            display: inherit;
+            justify-content: center;
+            color: #111111;
+            font-weight: 400;
+        }
+        .post-header{
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+        .content{
+            max-width: 1200px;
+            display: inherit;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .content p{
+            max-width: 900px;
+        }
+        .post-header{
+            width: 900px;
+        }
+        .content img{
+            justify-self: flex-start;
+            width: 900px;
+        }
+        @media (max-width: 800px) {
+            .post{
+                justify-content: flex-start;
+            }
+            .content img{
+                width: auto;
+            }
+        }
+    </style>
+    <article class="post">
+        <div class="post-header">
+            <div class="category">
+                <a href="#" class="post-link">{{ post.category }}</a>
+            </div>
+            <h1 class="post-title">
+                {{ post.title }}
+                <span class="post-reading_time">
+                    {{ post.reading_time }} minutos de lectura
+                </span>
+            </h1>
+            <div class="post-meta">
+                <span class="post-author">
+                    <img class="img-fluid avatar" style="width: 30px; height: 30px;" src="{% static 'core/img/avatar.jpg' %}" alt="">
+                    <a href="#" style="color: #888;">Cheke</a>
+                </span>
+                <span class="post-created">
+                    <i class="fa fa-clock-o"></i>
+                    {{ post.created|date:"b d, y" }}
+                </span>
+            </div>
+        </div>
+        <div class="entry-content">
+            <div class="content">
+                {{ post.content|safe }}
+            </div>
+        </div>
+    </article>
+{% endblock %}
