@@ -13,3 +13,11 @@ class Post(models.Model):
     reading_time = models.IntegerField(verbose_name='Tiempo de lectura(minutos)')
     category = models.CharField(max_length=50, verbose_name='Categoria')
     creator = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = 'Post'
+        verbose_name_plural = 'Posts'
+        ordering = ('created', 'title')
+
+    def __str__(self):
+        return  self.title
