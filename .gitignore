@@ -9,6 +9,10 @@ __pycache__/
 # C extensions
 *.so
 
+#Django Stuff
+Projects/
+Blog/
+#End of Django Stuff
 Personal/settings.py
 Personal/wsgi.py
 # Distribution / packaging
